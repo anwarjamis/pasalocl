@@ -1,0 +1,15 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+  <%= link_to "< Volver al admin", admin_path %> <br><br>
+  <% end %>
+  <h1>Todas las unidades</h1>
+  <ol>
+    <% @topics.each do |topic| %>
+      <li><%= link_to topic.title, topic_path(topic) %></li>
+    <% end %>
+  </ol>
+  <% if current_user.admin %>
+    <%= link_to "Agregar >", new_topic_path %>
+  <% end %>
+</div>

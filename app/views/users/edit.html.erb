@@ -1,0 +1,27 @@
+<div class="container my-4">
+  <% if current_user.admin %>
+    <%= link_to "< Volver a lista de usuarios", users_path %> <br><br>
+  <% end %>
+  <div class="forms"><h2>Actualizar datos</h2><br>
+    <div class="container">
+      <%= simple_form_for @user do |u| %>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <%= u.input :name, label: "Nombre" %>
+        </div>
+        <div class="col-md-6">
+          <%= u.input :last_name, label: "Apellido" %>
+        </div>
+      </div>
+        <%= u.input :phone_number, label: "Teléfono" %>
+        <%= u.association :university, label: "Universidad" %>
+        <%= u.association :career, label: "Área de estudios" %>
+        <% if current_user.admin? %>
+          <%= u.input :subscribed %>
+          <%= u.input :admin %>
+        <% end %>
+        <%= u.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

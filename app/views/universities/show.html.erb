@@ -1,0 +1,13 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Volver a lista de universidades", universities_path %> <br><br>
+  <% end %>
+  <h1><%= @university.name %></h1>
+  <% if current_user.admin %>
+    <%= link_to "Editar >", edit_university_path(@university) %> |
+    <%= link_to "Eliminar >", university_path(@university), data: {
+      turbo_method: :delete,
+                        turbo_confirm: "Are you sure you want to delete this university?" } %>
+  <% end %>
+</div>

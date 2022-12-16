@@ -1,0 +1,19 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Volver a lista de clases", lessons_path %> <br><br>
+  <% end %>
+  <div class="forms">
+    <h1>Nueva clase</h1>
+  <%= simple_form_for @lesson do |l| %>
+    <%= l.input :title %>
+    <%= l.input :time %>
+    <%= l.input :description %>
+    <%= l.input :asset, as: :file %>
+    <%= l.association :topic %>
+    <%= l.input :description %>
+    <%= l.input :free %>
+    <%= l.button :submit %>
+  <% end %>
+  </div>
+</div>

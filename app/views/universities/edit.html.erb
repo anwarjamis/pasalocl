@@ -1,0 +1,14 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Volver a #{@university.initials}", university_path(@university) %> <br><br>
+  <% end %>
+  <div class="forms">
+    <h1>Editando <%= @university.initials %></h1>
+  <%= simple_form_for @university do |u| %>
+    <%= u.input :name %>
+    <%= u.input :initials %>
+    <%= u.button :submit %>
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Volver a #{@course.name}", course_path(@course) %> <br><br>
+  <% end %>
+  <div class="forms">
+    <h1>Editando <%= @course.name %></h1>
+  <%= simple_form_for @course do |c| %>
+    <%= c.input :name %>
+    <%= c.input :description %>
+    <%= c.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

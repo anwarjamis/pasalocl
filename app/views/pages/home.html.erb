@@ -1,2 +1,161 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- banner -->
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Más de <%= @lessons.count %> videos para que te prepares como nunca antes.</h1>
+        <p class="lead">Nuestro método busca hacer que el aprendizaje no sea tan aburrido. Aprendes mucho más cuando te entretienes.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <%= link_to "Crear cuenta", new_user_registration_path , class: "btn btn-primary btn-lg px-4 me-md-2" %>
+          <%= link_to "Iniciar sesión", new_user_session_path, class: "btn btn-lg px-4"%>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- banner -->
+
+<!-- features -->
+<div class="container px-4 py-5" id="hanging-icons">
+  <h2 class="pb-2 border-bottom">¿Por qué elegirnos?</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+      </div>
+      <div>
+        <h3 class="fs-2">Todos los cursos</h3>
+        <p>Después de pagar la suscripción tienes <strong>acceso a todos los videos</strong> de todos los cursos disponibles en nuestra plataforma.</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+      </div>
+      <div>
+        <h3 class="fs-2">No pagues demás</h3>
+        <p>¿Le pagaste a un profe particular que te cobra lo mismo por hora? Aquí puedes <strong>pagar lo mismo por mucho más.</strong></p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
+      </div>
+      <div>
+        <h3 class="fs-2">Para todos los ritmos</h3>
+        <p>Obviamente puedes <strong>pausar, retroceder y ver</strong> todos los videos las veces que quieras, desde donde quieras.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- features -->
+
+<!-- pricing -->
+<div style="background-color: #F6F7F8;">
+  <div class="container py-3">
+    <header>
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal"><strong>Pricing</strong></h1>
+        <p class="fs-5 text-muted">Todo lo que necesitas para pasar tus ramos con un sola suscripción mensual.</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="row row-cols-1 row-cols-md-2 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Free</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mes</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Acceso a contenido gratuito</li>
+                <li>Acceso a la comunidad de pásalo</li>
+                <li>Clases particulares pagadas</li>
+              </ul>
+              <%= link_to "Crear cuenta gratis", new_user_registration_path, class: "w-100 btn btn-lg btn-outline-primary"  %>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Pro</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">$25.000<small class="text-muted fw-light">/mes</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Acceso a todo el contenido</li>
+                <li>Resolución en video de problemas propuestos</li>
+                <li>2 clases particulares al mes gratis</li>
+              </ul>
+              <%= link_to "Suscribirse", subscribe_path, class: "w-100 btn btn-lg btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!-- pricing -->
+
+<!-- jumbotron -->
+<div class="container py-4">
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">¿Qué es la comunidad pásalo?</h1>
+      <p class="col-md-10 fs-4">Luego de que te suscribes, te agregamos a los grupos de slack de los cursos que quieras para que hagas tus preguntas de cómo resolver los ejercicos. Si tienes suerte, uno de nuestros profesores puede grabarse resolviendo el ejercicio que preguntaste y subirlo a nuestra plataforma.</p>
+    </div>
+  </div>
+
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-70 p-5 text-bg-primary rounded-3">
+        <h2>El 92% de los suscritos</h2>
+        <p>Dice haber entendido más y haber subido su promedio desde que se sucribieron a pásalo. ¿No nos crees? Suscríbete y sé parte de los que pasaron sus ramos 😉</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-70 p-5 bg-light border rounded-3">
+        <h2>Mucho más 🚀</h2>
+        <p>Somos una empresa que está recién empezando, así que queda muchísimo por crecer. Escuchamos a nuestros clientes para mejorar día a día.</p>
+      </div>
+    </div>
+  </div>
+<!-- jumbotron -->
+
+<!-- footer -->
+<div class="container">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+    <div class="col mb-3">
+      <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+        <%= image_tag("pasalocl.png", size: "120x32", alt: "logo") %>
+      </a>
+      <p class="text-muted">&copy; 2022</p>
+    </div>
+
+    <div class="col mb-3"></div>
+
+    <div class="col mb-3"></div>
+
+    <div class="col mb-3">
+      <h5>About us</h5>
+      <ul class="nav flex-column">
+        <%= link_to "Quienes somos", root_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
+        <%= link_to "Trabaja con nosotros", root_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Usuarios</h5>
+      <ul class="nav flex-column">
+        <%= link_to "Crear cuenta", new_user_registration_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
+        <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
+        <%= link_to "Suscríbete aquí", subscribe_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
+      </ul>
+    </div>
+  </footer>
+</div>
+<!-- footer -->

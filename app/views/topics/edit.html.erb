@@ -1,0 +1,15 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Volver a #{@topic.title}", topic_path(@topic) %> <br><br>
+  <% end %>
+  <div class="forms">
+    <h1>Editando <%= @topic.title %></h1>
+  <%= simple_form_for @topic do |t| %>
+    <%= t.input :title %>
+    <%= t.input :description %>
+    <%= t.association :course %>
+    <%= t.button :submit %>
+  <% end %>
+  </div>
+</div>

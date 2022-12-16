@@ -1,0 +1,23 @@
+<div class="container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Ir al admin", admin_path %> <br><br>
+  <% end %>
+
+  <% if !current_user.subscribed %>
+    <%= render "shared/unsubscribed" %>
+  <% end %>
+  <br>
+  <h1>Todos los cursos</h1><br>
+    <div class="cards">
+    <% @courses.order(name: :desc).each do |course|  %>
+      <div class="card-category" style="background-color: $light-gray">
+        <%= link_to "#{course.name} (#{@topics.where(course_id: course).count})", course_path(course) %>
+      </div>
+    <% end %>
+    </div>
+
+  <% if current_user.admin %>
+    <br><%= link_to "Agregar >", new_course_path %>
+  <% end %>
+</div>

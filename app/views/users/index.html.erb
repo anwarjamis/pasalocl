@@ -1,0 +1,25 @@
+<div class="admin container">
+  <br>
+  <% if current_user.admin %>
+    <%= link_to "< Volver al admin", admin_path %> <br><br>
+  <% end %>
+  <h1>Lista de usuarios</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Usuarios (<%= @users.all.count %>)</th>
+        <th scope="col">Suscrito (<%= @users.where(subscribed: :true).count %>)</th>
+        <th scope="col">Admin (<%= @users.where(admin: :true).count %>)</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= link_to u.email, user_path(u) %></td>
+        <td><%= link_to u.subscribed ? "Si" : "No", edit_user_path(u)%></td>
+        <td><%= link_to u.admin ? "Si" : "No", edit_user_path(u)%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
