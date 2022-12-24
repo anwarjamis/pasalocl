@@ -10,7 +10,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    record.id == user.id
+    record.id == user.id || user.admin
   end
 
   def edit?
@@ -18,6 +18,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    record.id == user.id
+    record.id == user.id || user.admin
   end
 end

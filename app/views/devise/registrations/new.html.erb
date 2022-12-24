@@ -22,10 +22,11 @@
                     autofocus: true %>
         </div>
       </div>
-        <%= f.input :phone_number,
-                    label: "Teléfono",
-                    required: true,
-                    autofocus: true %>
+      <%= f.input :phone_number,
+                  label: "Teléfono (+56)",
+                  placeholder: "9795788XX",
+                  required: true,
+                  autofocus: true %>
       <div class="row g-3">
         <div class="col-md-6">
           <%= f.association :university,

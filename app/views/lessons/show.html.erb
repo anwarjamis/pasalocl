@@ -1,10 +1,10 @@
 <div class="container">
   <br>
-  <%= link_to "< Volver al curso", course_path(@course) %> <br><br>
+  <%= link_to "< Volver", topic_path(@lesson.topic_id) %> <br><br>
   <h1><%= @lesson.title %></h1>
   <p><%= @lesson.description %></p>
-  <div class="video">
-    <%= cl_video_tag @lesson.asset.key, controls: true, controlsList: "nodownload" , height: "75%"%>
+  <div class="embed-responsive embed-responsive-16by9">
+    <%= cl_video_tag @lesson.asset.key, controls: true, controlsList: "nodownload" , height: "75%", class: "embed-responsive-item" %>
   </div>
   <br>
   <% if current_user.admin %>
