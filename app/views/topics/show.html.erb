@@ -3,13 +3,31 @@
   <% if current_user.admin %>
     <%= link_to "< Volver a lista de unidades", topics_path %> <br><br>
   <% end %>
+  <%= link_to "< Volver al curso", course_path(@topic.course_id) %> <br><br>
   <h1><%= @topic.title %></h1>
   <p><%= @topic.description %></p>
-  <ol>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @lessons.each do |lesson| %>
-    <li><%= lesson.title %></li>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+        <% if lesson.free || (current_user.subscribed == true) %>
+          <h5 class="card-title"><%= link_to lesson.title, lesson_path(lesson)%></h5>
+        <% else %>
+          <h5 class="card-title"><%= lesson.title %></h5>
+        <% end %>
+          <p class="card-text"><%= lesson.description %></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><%= "GRATIS | " if lesson.free && (current_user.subscribed == false)%><%= lesson.time %> minutos</small>
+        </div>
+      </div>
+    </div>
   <% end %>
-  </ol>
+  </div>
+
+  <br><br>
   <% if current_user.admin %>
     <%= link_to "Editar >", edit_topic_path(@topic) %> |
     <%= link_to "Eliminar >", topic_path(@topic), data: {

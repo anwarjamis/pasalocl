@@ -18,7 +18,7 @@ class LessonPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user.subscribed || record.free ? true : false
   end
 
   def edit?

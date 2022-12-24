@@ -50,6 +50,7 @@ gem "sassc-rails"
 
 gem "pundit"
 gem "cloudinary"
+gem 'initials'
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"

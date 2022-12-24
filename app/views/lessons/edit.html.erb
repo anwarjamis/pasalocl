@@ -8,7 +8,6 @@
   <%= simple_form_for @lesson do |l| %>
     <%= l.input :title %>
     <%= l.input :time %>
-    <%= l.input :description %>
     <%= l.input :asset, as: :file %>
     <%= l.association :topic %>
     <%= l.input :description %>
