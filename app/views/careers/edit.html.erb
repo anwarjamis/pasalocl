@@ -1,7 +1,9 @@
 <div class="container">
   <br>
   <% if current_user.admin %>
-    <%= link_to "< Volver a #{@career.name}", career_path(@career) %> <br><br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to "< Volver a #{@career.name}", career_path(@career), class: "btn btn-primary" %>
+    </div>
   <% end %>
   <div class="forms">
     <h1>Editando <%= @career.name %></h1>

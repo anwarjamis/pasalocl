@@ -1,9 +1,13 @@
 <div class="container">
-  <br>
   <% if current_user.admin %>
-    <%= link_to "< Volver a lista de unidades", topics_path %> <br><br>
+    <div class="btn-group my-4" role="group" aria-label="Basic example">
+      <%= link_to "← Volver a lista de unidades", topics_path, class: "btn btn-primary" %>
+    </div>
   <% end %>
-  <%= link_to "< Volver al curso", course_path(@topic.course_id) %> <br><br>
+  <br>
+  <div class="btn-group mb-4" role="group" aria-label="Basic example">
+    <%= link_to "← Volver al curso", course_path(@topic.course_id), class: "btn btn-primary" %>
+  </div>
   <h1><%= @topic.title %></h1>
   <p><%= @topic.description %></p>
 
@@ -29,9 +33,12 @@
 
   <br><br>
   <% if current_user.admin %>
-    <%= link_to "Editar >", edit_topic_path(@topic) %> |
-    <%= link_to "Eliminar >", topic_path(@topic), data: {
-      turbo_method: :delete,
-                        turbo_confirm: "Are you sure you want to delete this topic?" } %>
+    <div class="btn-group mb-4" role="group" aria-label="Basic example">
+      <%= link_to "Editar →", edit_topic_path(@topic), class: "btn btn-primary" %>
+      <%= link_to "Eliminar →", topic_path(@topic),
+                                class: "btn btn-primary",
+                                data: { turbo_method: :delete,
+                                        turbo_confirm: "Are you sure you want to delete this topic?" } %>
+    </div>
   <% end %>
 </div>
