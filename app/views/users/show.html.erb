@@ -1,15 +1,17 @@
 <div class="container">
   <br>
-  <% if current_user.admin %>
-    <%= link_to "< Volver a lista de usuarios", users_path %> <br><br>
-  <% end %>
   <% if !current_user.subscribed %>
     <%= render "shared/unsubscribed" %>
+  <% end %>
+  <% if current_user.admin %>
+    <div class="btn-group my-4" role="group" aria-label="Basic example">
+      <%= link_to "← Volver a lista de usuarios", users_path, class: "btn btn-primary" %>
+    </div>
   <% end %>
   <br>
   <h1>Hola <%= @user.name %>!</h1>
   <div class="forms" style="margin-top: 24px;">
-    <div class="container"> 
+    <div class="container">
       <%= simple_form_for @user do |u| %>
       <div class="row g-3">
         <div class="col-md-6">
@@ -26,7 +28,9 @@
           <%= u.input :subscribed, disabled: true %>
           <%= u.input :admin, disabled: true%>
         <% end %>
-        <%= link_to "Actualizar datos >", edit_user_path(@user) %>
+        <div class="btn-group mb-4" role="group" aria-label="Basic example">
+          <%= link_to "Actualizar datos →", edit_user_path(@user), class: "btn btn-primary" %>
+        </div>
       <% end %>
     </div>
   </div>
