@@ -1,14 +1,16 @@
-<div class="container">
+<div class="container my-4">
   <% if !current_user.subscribed %>
     <br>
     <%= render "shared/unsubscribed" %>
   <% end %>
-  <div class="btn-group my-4" role="group" aria-label="Basic example">
+  <div class="btn-group mb-4" role="group" aria-label="Basic example">
     <%= link_to "← Volver a lista de cursos", courses_path, class: "btn btn-primary" %>
   </div>
-  <h1><%= @course.name %></h1>
-  <p><%= @course.description %></p>
-  <h3>Unidades</h3>
+  <div class="bg-light p-5 rounded mb-3">
+    <h1><%= @course.name %></h1>
+    <p><%= @course.description %></p>
+
+  <h3 class="mt-5">Unidades</h3>
 
   <% @topics.each do |topic| %>
   <ul class="list-group">
@@ -20,10 +22,11 @@
     <% end %>
   </ul>
   <% end %>
-
+  </div>
   <br>
   <% if current_user.admin %>
     <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to "← Volver a lista de cursos", courses_path, class: "btn btn-primary" %>
       <%= link_to "Editar →", edit_course_path(@course), class: "btn btn-primary" %>
       <%= link_to "Eliminar →", course_path(@course), class: "btn btn-primary", data: {
       turbo_method: :delete,

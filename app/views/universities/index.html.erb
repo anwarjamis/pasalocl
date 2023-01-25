@@ -1,10 +1,4 @@
-<div class="container">
-  <br>
-  <% if current_user.admin %>
-    <div class="btn-group mb-4" role="group" aria-label="Basic example">
-      <%= link_to "← Volver al admin", admin_path, class: "btn btn-primary" %>
-    </div>
-  <% end %>
+<div class="container my-4">
   <h1>Todas las universidades</h1>
   <ol>
     <% @universities.each do |university| %>
@@ -13,6 +7,7 @@
   </ol>
   <% if current_user.admin %>
     <div class="btn-group mb-2" role="group" aria-label="Basic example">
+      <%= link_to "← Volver al admin", admin_path, class: "btn btn-primary" %>
       <%= link_to "Agregar →", new_university_path, class: "btn btn-primary" %>
     </div>
   <% end %>
