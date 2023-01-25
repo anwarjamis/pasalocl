@@ -1,5 +1,4 @@
-<div class="container">
-  <br>
+<div class="container my-4">
   <% if current_user.admin %>
     <div class="btn-group mb-4" role="group" aria-label="Basic example">
       <%= link_to "← Volver al admin", admin_path, class: "btn btn-primary" %>
@@ -12,7 +11,7 @@
     <% end %>
   </ol>
   <% if current_user.admin %>
-    <div class="btn-group mb-4" role="group" aria-label="Basic example">
+    <div class="btn-group mt-4" role="group" aria-label="Basic example">
       <%= link_to "Agregar →", new_lesson_path, class: "btn btn-primary" %>
     </div>
   <% end %>

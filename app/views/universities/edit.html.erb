@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container my-4">
   <br>
   <% if current_user.admin %>
-    <div class="btn-group mb-4" role="group" aria-label="Basic example">
+    <div class="btn-group" role="group" aria-label="Basic example">
       <%= link_to "← Volver a #{@university.initials}", university_path(@university), class: "btn btn-primary" %>
     </div>
   <% end %>

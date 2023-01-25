@@ -1,17 +1,19 @@
 <div class="container">
   <br>
   <% if current_user.admin %>
+
   <h1>Admin de PASALOCL</h1>
-  <h2><%= User.all.count %> usuarios totales </h2> <br>
-    <h4>Editar</h4>
-    <ul>
-      <li><%= link_to "Usuarios", users_path %></li>
-      <li><%= link_to "Universidades", universities_path %></li>
-      <li><%= link_to "Carreras", careers_path %></li>
-      <li><%= link_to "Cursos", courses_path %></li>
-      <li><%= link_to "Unidades", topics_path %></li>
-      <li><%= link_to "Clases", lessons_path %></li>
-    </ul>
+  <h2><%= User.all.count %> usuarios totales </h2>
+  <hr>
+  <h4 class="my-3">Editar</h4>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "Usuarios", users_path, class: "btn btn-primary" %>
+    <%= link_to "Universidades", universities_path, class: "btn btn-primary" %>
+    <%= link_to "Carreras", careers_path, class: "btn btn-primary" %>
+    <%= link_to "Cursos", courses_path, class: "btn btn-primary" %>
+    <%= link_to "Unidades", topics_path, class: "btn btn-primary" %>
+    <%= link_to "Clases", lessons_path, class: "btn btn-primary" %>
+  </div>
   <% else %>
     <h1>Se supone que no deberías estar aquí 👀</h1>
     <h3 class="mb-5">Pero para que no te sientas tan mal, te dejamos con la canción favorita del equipo.</h3>
