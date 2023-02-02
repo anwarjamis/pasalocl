@@ -1,10 +1,5 @@
 <div class="admin container">
   <br>
-  <% if current_user.admin %>
-    <div class="btn-group mb-4" role="group" aria-label="Basic example">
-      <%= link_to "← Volver al admin", admin_path, class: "btn btn-primary" %>
-    </div>
-  <% end %>
   <h1>Lista de usuarios</h1>
   <table class="table table-hover">
     <thead>
@@ -24,4 +19,9 @@
     <% end %>
     </tbody>
   </table>
+  <% if current_user.admin %>
+    <div class="btn-group mb-4" role="group" aria-label="Basic example">
+      <%= link_to "← Volver al admin", admin_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>
