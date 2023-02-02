@@ -1,9 +1,42 @@
-<div class="container">
-  <br>
+<div class="container mt-4">
   <% if current_user.admin %>
-
-  <h1>Admin de PASALOCL</h1>
-  <h2><%= User.all.count %> usuarios totales </h2>
+  <h1>Usuarios</h1>
+  <div class="row my-4">
+    <div class="col-sm-3 mb-3">
+      <div class="card border">
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">Totales</h5>
+          <h3 class="card-text text-center"><%= @users.to_i %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">% Activos (semana)</h5>
+          <h3 class="card-text text-center"><%= @active_users_p.to_i %>%</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">Suscritos</h5>
+          <h3 class="card-text text-center"><%= @subscribed %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center font-weight-bold">% Suscritos</h5>
+          <h3 class="card-text text-center"><%= @subscribed_p %>%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="mb-4">Curva de registro de usuarios</h3>
+  <%= line_chart User.group_by_month(:created_at).count %>
   <hr>
   <h4 class="my-3">Editar</h4>
   <div class="btn-group" role="group" aria-label="Basic example">

@@ -1,55 +1,62 @@
 <!-- banner -->
 <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <%= image_tag('home.jpg', class: "d-block mx-lg-auto img-fluid") %>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-6 fw-bold lh-1 mb-3">Clases particulares donde sea que estés.</h1>
-        <p class="lead">Nuestro método busca hacer que el aprendizaje no sea tan aburrido. Aprendes mucho más cuando te entretienes.</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <%= link_to "Crear cuenta", new_user_registration_path , class: "btn btn-primary btn-lg px-4 me-md-2" %>
-          <%= link_to "Iniciar sesión", new_user_session_path, class: "btn btn-lg px-4"%>
-        </div>
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <%= image_tag('home.jpg', class: "d-block mx-lg-auto img-fluid") %>
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-6 fw-bold lh-1 mb-3">Clases particulares donde sea que estés.</h1>
+      <p class="lead">Nuestro método busca hacer que el aprendizaje no sea tan aburrido. Aprendes mucho más cuando te entretienes.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <%= link_to "Crear cuenta", new_user_registration_path , class: "btn btn-primary btn-lg px-4 me-md-2" %>
+        <%= link_to "Iniciar sesión", new_user_session_path, class: "btn btn-lg px-4"%>
       </div>
     </div>
   </div>
+</div>
 <!-- banner -->
 
 <!-- features -->
-<div class="container px-4 py-5" id="hanging-icons">
-  <h2 class="pb-2 border-bottom">¿Por qué elegirnos?</h2>
-  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-    <div class="col d-flex align-items-start">
-      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-        <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+<div style="background-color: #F6F7F8">
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">¿Por qué elegirnos?</h2>
+    <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div>
+          <h3 class="fs-2">Todos los cursos</h3>
+          <p>Después de pagar la suscripción tienes <strong>acceso a todos los videos</strong> de todos los cursos disponibles en nuestra plataforma.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="fs-2">Todos los cursos</h3>
-        <p>Después de pagar la suscripción tienes <strong>acceso a todos los videos</strong> de todos los cursos disponibles en nuestra plataforma.</p>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h3 class="fs-2">No pagues demás</h3>
+          <p>¿Le pagaste a un profe particular que te cobra lo mismo por hora? Aquí puedes <strong>pagar lo mismo por mucho más.</strong></p>
+        </div>
       </div>
-    </div>
-    <div class="col d-flex align-items-start">
-      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
-      </div>
-      <div>
-        <h3 class="fs-2">No pagues demás</h3>
-        <p>¿Le pagaste a un profe particular que te cobra lo mismo por hora? Aquí puedes <strong>pagar lo mismo por mucho más.</strong></p>
-      </div>
-    </div>
-    <div class="col d-flex align-items-start">
-      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-        <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
-      </div>
-      <div>
-        <h3 class="fs-2">Para todos los ritmos</h3>
-        <p>Obviamente puedes <strong>pausar, retroceder y ver</strong> todos los videos las veces que quieras, desde donde quieras.</p>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h3 class="fs-2">Para todos los ritmos</h3>
+          <p>Obviamente puedes <strong>pausar, retroceder y ver</strong> todos los videos las veces que quieras, desde donde quieras.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <!-- features -->
+
+<!-- courses -->
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-lg-6">
+      <h1 class="display-6 fw-bold lh-1 mb-3">Más cursos todos los semestres.</h1>
+      <p class="lead">Por ahora nos enfocamos en estudiantes de primer año pero pronto vamos a ofrecer cursos para los próximos años.</p>
+    </div>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <%= image_tag('courses.png', class: "d-block mx-lg-auto img-fluid") %>
+    </div>
+  </div>
+</div>
+<!-- courses -->
 
 <!-- pricing -->
 <div style="background-color: #F6F7F8;">
@@ -72,7 +79,7 @@
               <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mes</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>Acceso a contenido gratuito</li>
-                <li>Acceso a la comunidad de pásalo</li>
+                <li>Sin acceso a la comunidad de pásalo</li>
                 <li>Clases particulares pagadas</li>
               </ul>
               <%= link_to "Crear cuenta gratis", new_user_registration_path, class: "w-100 btn btn-lg btn-outline-primary"  %>
@@ -88,7 +95,7 @@
               <h1 class="card-title pricing-card-title">$25.000<small class="text-muted fw-light">/mes</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>Acceso a todo el contenido</li>
-                <li>Resolución en video de problemas propuestos</li>
+                <li>Acceso a la comunidad de pásalo</li>
                 <li>2 clases particulares al mes gratis</li>
               </ul>
               <%= link_to "Suscribirse", subscribe_path, class: "w-100 btn btn-lg btn-primary" %>
@@ -141,19 +148,18 @@
     <div class="col mb-3"></div>
 
     <div class="col mb-3">
-       <!-- <h5>About us</h5>
-      <ul class="nav flex-column">
-        <%= link_to "Quienes somos", root_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
-        <%= link_to "Trabaja con nosotros", root_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
-      </ul> -->
-    </div>
-
-    <div class="col mb-3">
       <h5>Usuarios</h5>
       <ul class="nav flex-column">
         <%= link_to "Crear cuenta", new_user_registration_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
         <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
         <%= link_to "Suscríbete aquí", subscribe_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Nosotros</h5>
+      <ul class="nav flex-column">
+        <%= link_to "Déjanos feedback 🙌🏽", feedback_path, class: "nav-item mb-2 nav-link p-0 text-muted" %>
       </ul>
     </div>
   </footer>
