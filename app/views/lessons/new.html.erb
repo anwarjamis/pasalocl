@@ -1,5 +1,4 @@
 <div class="container my-4">
-  <br>
   <% if current_user.admin %>
     <div class="btn-group" role="group" aria-label="Basic example">
       <%= link_to "← Volver a lista de clases", lessons_path, class: "btn btn-primary" %>
@@ -14,6 +13,7 @@
     <%= l.association :topic %>
     <%= l.input :description %>
     <%= l.input :free %>
+    <%= l.input :category %>
     <%= l.button :submit %>
   <% end %>
   </div>
