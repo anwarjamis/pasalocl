@@ -5,7 +5,7 @@
   <div class="btn-group mb-4" role="group" aria-label="Basic example">
     <%= link_to "← Volver a lista de cursos", courses_path, class: "btn btn-primary" %>
   </div>
-  <div class="bg-light p-5 rounded mb-3">
+  <div class="bg-light p-5 rounded mb-5">
     <h1><%= @course.name %></h1>
     <p><%= @course.description %></p>
 
@@ -22,7 +22,6 @@
   </ul>
   <% end %>
   </div>
-  <br>
   <% if current_user.admin %>
     <div class="btn-group" role="group" aria-label="Basic example">
       <%= link_to "← Volver a lista de cursos", courses_path, class: "btn btn-primary" %>
