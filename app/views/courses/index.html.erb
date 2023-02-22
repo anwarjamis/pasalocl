@@ -2,15 +2,22 @@
   <% if !current_user.subscribed %>
     <%= render "shared/unsubscribed" %>
   <% end %>
-  <h1>Todos los cursos</h1><br>
-    <div class="cards mb-5">
+  <h1>👩🏽‍🎓 Todos los cursos</h1>
+  <hr>
+  <div class="row my-4">
     <% @courses.order(name: :desc).each do |course|  %>
-      <div class="card-category" style="background-color: $light-gray">
-        <%= link_to "#{course.name} (#{@topics.where(course_id: course).count})", course_path(course) %>
+    <div class="col-sm-4">
+      <div class="card">
+        <h6 class="card-header"><%= "#{Topic.where(course_id: course.id).count} unidades" %></h6>
+        <div class="card-body">
+          <h3 class="card-title"><strong><%= course.name %></strong></h3>
+          <p class="card-text"><%= course.short %></p>
+          <%= link_to "Ir al curso", course_path(course), class: "btn btn-primary" %>
+        </div>
       </div>
-    <% end %>
     </div>
-
+    <% end %>
+  </div>
   <% if current_user.admin %>
     <div class="btn-group" role="group" aria-label="Basic example">
       <%= link_to "← Ir al admin", admin_path, class: "btn btn-primary" %>

@@ -9,6 +9,7 @@
   <%= simple_form_for @course do |c| %>
     <%= c.input :name %>
     <%= c.input :description %>
+    <%= c.input :short %>
     <%= c.button :submit, label: "Crear curso", class: "btn btn-primary" %>
   <% end %>
   </div>
