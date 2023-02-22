@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_09_182342) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_174042) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -110,10 +110,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_182342) do
     t.index ["university_id"], name: "index_users_on_university_id"
   end
 
+  create_table "views", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_views_on_lesson_id"
+    t.index ["user_id"], name: "index_views_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lessons", "topics"
   add_foreign_key "topics", "courses"
   add_foreign_key "users", "careers"
   add_foreign_key "users", "universities"
+  add_foreign_key "views", "lessons"
+  add_foreign_key "views", "users"
 end

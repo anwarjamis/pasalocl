@@ -10,6 +10,9 @@ class LessonsController < ApplicationController
   def show
     @topic = Topic.where(id: @lesson.topic_id).first
     @course = Course.where(id: @topic.course_id).first
+
+    @lesson = Lesson.find(params[:id])
+    @lesson.increment_views_for(current_user)
   end
 
   def new

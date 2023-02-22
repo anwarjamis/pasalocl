@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   belongs_to :university
   belongs_to :career
+  has_many :views
 
   validates :phone_number, uniqueness: true
 end
