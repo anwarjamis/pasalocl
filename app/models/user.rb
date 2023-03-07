@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :views
 
   validates :phone_number, uniqueness: true
+  validates :phone_number, numericality: true
 end

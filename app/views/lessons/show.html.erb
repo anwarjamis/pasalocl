@@ -9,9 +9,9 @@
     <h1><%= @lesson.title %></h1>
     <p><%= @lesson.description %></p>
     <div class="embed-responsive embed-responsive-16by9 mb-4">
-      <%= cl_video_tag @lesson.asset.key, controlsList: "nodownload", controls: true, class: "embed-responsive-item" %>
+      <%= cl_video_tag @lesson.asset.key, controlsList: "nodownload", playsinline: true, preload: "auto", controls: true, class: "embed-responsive-item" %>
     </div>
-    <p><i class="fa fa-eye"></i> Este video ha sido visto <%= @lesson.views.count %> veces</p>
+    <p><i class="fa fa-eye"></i> Este video ha sido visto <%= @user_views %> veces</p>
   </div>
   <% if current_user.admin %>
     <div class="btn-group" role="group" aria-label="Basic example">

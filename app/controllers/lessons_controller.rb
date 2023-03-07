@@ -12,7 +12,8 @@ class LessonsController < ApplicationController
     @course = Course.where(id: @topic.course_id).first
 
     @lesson = Lesson.find(params[:id])
-    @lesson.increment_views_for(current_user)
+    increment_views_for(@lesson)
+    @user_views = View.where(lesson_id: @lesson).count
   end
 
   def new
@@ -59,4 +60,13 @@ class LessonsController < ApplicationController
   def lesson_params
     params.require(:lesson).permit(:title, :description, :time, :topic_id, :asset, :free, :category)
   end
+
+  def increment_views_for(lesson)
+    last_user_view = View.where(user_id: current_user, lesson_id: lesson).last
+    return unless last_user_view.nil? || last_user_view.last_viewed_at < 24.hours.ago
+
+    now = DateTime.now
+    View.create(user_id: current_user.id, last_viewed_at: now, lesson_id: lesson.id)
+  end
+
 end
