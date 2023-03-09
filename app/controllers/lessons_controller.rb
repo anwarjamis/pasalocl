@@ -58,7 +58,7 @@ class LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :time, :topic_id, :asset, :free, :category)
+    params.require(:lesson).permit(:title, :description, :time, :topic_id, :free, :category, :vimeo)
   end
 
   def increment_views_for(lesson)
@@ -68,5 +68,4 @@ class LessonsController < ApplicationController
     now = DateTime.now
     View.create(user_id: current_user.id, last_viewed_at: now, lesson_id: lesson.id)
   end
-
 end

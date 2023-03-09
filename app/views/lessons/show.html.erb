@@ -1,16 +1,11 @@
 <div class="container my-4">
-  <div class="flash flash-warning mb-4">
-    <span>⚠️ Estamos teniendo problemas con los videos en Safari. Mientras lo resolvemos, <strong>puedes cambiar de navegador o actualizar la página para verlo.</strong></span>
-  </div>
   <div class="btn-group mb-4" role="group" aria-label="Basic example">
     <%= link_to "← Volver", topic_path(@lesson.topic_id), class: "btn btn-primary" %>
   </div>
   <div class="bg-light p-5 rounded my-4">
     <h1><%= @lesson.title %></h1>
     <p><%= @lesson.description %></p>
-    <div class="embed-responsive embed-responsive-16by9 mb-4">
-      <%= cl_video_tag @lesson.asset.key, controlsList: "nodownload", playsinline: true, preload: "auto", controls: true, class: "embed-responsive-item" %>
-    </div>
+    <%= @lesson.vimeo.html_safe unless @lesson.vimeo.nil?  %>
     <p><i class="fa fa-eye"></i> Este video ha sido visto <%= @user_views %> veces</p>
   </div>
   <% if current_user.admin %>
