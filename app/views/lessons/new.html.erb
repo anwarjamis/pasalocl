@@ -9,9 +9,9 @@
   <%= simple_form_for @lesson do |l| %>
     <%= l.input :title %>
     <%= l.input :time %>
-    <%= l.input :asset, as: :file %>
     <%= l.association :topic %>
     <%= l.input :description %>
+    <%= l.input :vimeo %>
     <%= l.input :free %>
     <%= l.input :category %>
     <%= l.button :submit %>
